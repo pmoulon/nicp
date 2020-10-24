@@ -1,6 +1,6 @@
 CMAKE_MINIMUM_REQUIRED(VERSION 3.5)
 
-PROJECT(nicp)
+PROJECT(nicp CXX)
 
 # Optionally compiling part
 OPTION(BUILD_NICP_VIEWER "enables NICP viewer" false)
@@ -77,7 +77,7 @@ FIND_PACKAGE(OpenCV 3.2.0 REQUIRED)
 INCLUDE_DIRECTORIES(${OpenCV_INCLUDE_DIRS})
 
 # Set up the top-level include directories
-INCLUDE_DIRECTORIES(${nicp_SOURCE_DIR}/nicp)
+INCLUDE_DIRECTORIES(${nicp_SOURCE_DIR})
 
 IF(BUILD_NICP_VIEWER)
   # OpenGL is used in the draw actions for the different types, as well
@@ -100,4 +100,4 @@ IF(BUILD_NICP_VIEWER)
 ENDIF(BUILD_NICP_VIEWER)
 
 # Include the subdirectories
-ADD_SUBDIRECTORY(nicp)
+ADD_SUBDIRECTORY(core)

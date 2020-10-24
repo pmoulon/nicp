@@ -1,0 +1,8 @@
+BasedOnStyle: Google
+ColumnLimit: 120
+
+DerivePointerAlignment: false
+PointerAlignment: Left
+# The Google base style moved from Preserve to Regroup in clang-format 9.
+# We want to maintain prior behaviour. For context see:
+IncludeBlocks: Preserve

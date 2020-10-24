@@ -1,0 +1,5 @@
+ADD_EXECUTABLE(core_test
+  main_test.cc
+  utils_test.cc)
+SET_TARGET_PROPERTIES(core_test PROPERTIES OUTPUT_NAME nicp_core_test)
+SET_TARGET_PROPERTIES(core_test PROPERTIES LINKER_LANGUAGE CXX)
