@@ -1,10 +1,10 @@
-ADD_LIBRARY(nicp_core SHARED
+add_library(nicp_core SHARED
   cloud.h
   common_types.h
   utils.h
 )
-SET_TARGET_PROPERTIES(nicp_core PROPERTIES OUTPUT_NAME ${LIB_PREFIX}_core)
-SET_TARGET_PROPERTIES(nicp_core PROPERTIES LINKER_LANGUAGE CXX)
+set_target_properties(nicp_core PROPERTIES OUTPUT_NAME ${LIB_PREFIX}_core)
+set_target_properties(nicp_core PROPERTIES LINKER_LANGUAGE CXX)
 
 # Include the subdirectories
-ADD_SUBDIRECTORY(test)
+add_subdirectory(test)
