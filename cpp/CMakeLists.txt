@@ -26,6 +26,7 @@ set(CMAKE_MINSIZEREL_POSTFIX "_s" CACHE STRING "postfix applied to minimium-size
 # Work out the postfix; required where we use OUTPUT_NAME.
 if(CMAKE_BUILD_TYPE MATCHES Release)
   set(EXE_POSTFIX)
+  set(CMAKE_CXX_FLAGS_RELEASE "")
 elseif(CMAKE_BUILD_TYPE MATCHES Debug)
   set(EXE_POSTFIX ${CMAKE_DEBUG_POSTFIX})
 elseif(CMAKE_BUILD_TYPE MATCHES RelWithDebInfo)

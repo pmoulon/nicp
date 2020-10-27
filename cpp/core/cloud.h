@@ -8,16 +8,14 @@
 namespace nicp {
 namespace core {
 
-template <typename R>
 struct Measurement {
-  Vector3<R> point = Vector3<R>::Zero();
-  std::optional<Vector3<R>> normal = std::nullopt;
-  std::optional<R> intensity = std::nullopt;
-  std::optional<Vector3<R>> rgb = std::nullopt;
+  Vector3d point = Vector3d::Zero();
+  std::optional<Vector3d> normal = std::nullopt;
+  std::optional<double> intensity = std::nullopt;
+  std::optional<Vector3d> rgb = std::nullopt;
 };
 
-template <typename R>
-using Cloud = std::vector<Measurement<R>>;
+using Cloud = std::vector<Measurement>;
 
 }  // namespace core
 }  // namespace nicp

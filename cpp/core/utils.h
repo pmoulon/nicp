@@ -1,5 +1,7 @@
 #pragma once
 
+#include <assert.h>
+
 #include <Eigen/Core>
 #include <Eigen/Geometry>
 
@@ -8,33 +10,31 @@
 namespace nicp {
 namespace core {
 
-template <typename R>
-Isometry3<R> VectorToTransform(const Vector6<R>& v) {
-  Isometry3<R> T = Isometry3<R>::Identity();
+Isometry3d VectorToTransform(const Vector6d& v) {
+  Isometry3d T = Isometry3d::Identity();
 
   // Retrieve the quaternion's w component.
-  const double qw_squared = v.template tail<3>().squaredNorm();
+  const double qw_squared = v.tail<3>().squaredNorm();
   assert(qw_squared < 1.0 && "[Err] Encountered a non unit quaternion");
   const double qw = std::sqrt(1.0 - qw_squared);
 
   // Set the transform's rotational part.
-  const Quaternion<R> q(qw, v[3], v[4], v[5]);
-  T.template linear() = q.toRotationMatrix();
+  const Quaterniond q(qw, v[3], v[4], v[5]);
+  T.linear() = q.toRotationMatrix();
 
   // Set the transform's translational part.
-  T.template translation() = v.template head<3>();
+  T.translation() = v.head<3>();
   return T;
 }
 
-template <typename R>
-Vector6<R> TransformToVector(const Isometry3<R>& T) {
-  Vector6<R> v;
+Vector6d TransformToVector(const Isometry3d& T) {
+  Vector6d v;
 
-  Quaternion<R> q(T.linear());
-  v.template tail<3>() = Vector3<R>(q.x(), q.y(), q.z());
+  Quaterniond q(T.linear());
+  v.tail<3>() = Vector3d(q.x(), q.y(), q.z());
 
   // Set the vector translational components.
-  v.template head<3>() = T.translation();
+  v.head<3>() = T.translation();
 
   return v;
 }

@@ -7,32 +7,20 @@ namespace nicp {
 namespace core {
 
 // Common vector types.
-template <typename T>
-using Vector3 = Eigen::Matrix<T, 3, 1>;
-
-template <typename T>
-using Vector4 = Eigen::Matrix<T, 4, 1>;
-
-template <typename T>
-using Vector6 = Eigen::Matrix<T, 6, 1>;
+using Vector3d = Eigen::Vector3d;
+using Vector4d = Eigen::Vector4d;
+using Vector6d = Eigen::Matrix<double, 6, 1>;
 
 // Common matrix types.
-template <typename T>
-using Matrix3 = Eigen::Matrix<T, 3, 3>;
-
-template <typename T>
-using Matrix4 = Eigen::Matrix<T, 4, 4>;
-
-template <typename T>
-using Matrix6 = Eigen::Matrix<T, 6, 6>;
+using Matrix3d = Eigen::Matrix3d;
+using Matrix4d = Eigen::Matrix4d;
+using Matrix6d = Eigen::Matrix<double, 6, 6>;
 
 // Common quaternion types.
-template <typename R>
-using Quaternion = Eigen::Quaternion<R>;
+using Quaterniond = Eigen::Quaterniond;
 
 // Common isometry types.
-template <typename R>
-using Isometry3 = Eigen::Transform<R, 3, 1>;
+using Isometry3d = Eigen::Isometry3d;
 
 }  // namespace core
 }  // namespace nicp
