@@ -5,7 +5,6 @@
 
 #include <Eigen/Geometry>
 
-#include "core/cloud.h"
 #include "core/common_types.h"
 #include "core/data_associator.h"
 #include "core/linearizer.h"
@@ -13,7 +12,7 @@
 namespace nicp {
 namespace core {
 
-template <int Z, int S>
+template <class ReferenceMeasurements, class Measurements, int Z, int S>
 class Solver {
  public:
   struct Result {
@@ -25,10 +24,12 @@ class Solver {
     assert(S > 0 && "[Err] Solver's state dimension must be positive");
   }
 
-  Result Solve(const Cloud& reference_cloud, const Cloud& cloud) const { return Result(); }
+  Result Solve(const ReferenceMeasurements& reference_measurements, const Measurements& measurements) const {
+    return Result();
+  }
 
  private:
-  std::unique_ptr<DataAssociator> data_associator_;
+  std::unique_ptr<DataAssociator<ReferenceMeasurements, Measurements>> data_associator_;
   std::unique_ptr<Linearizer<Z, S>> linearizer_;
 };
 

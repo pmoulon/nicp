@@ -3,8 +3,6 @@
 #include <utility>
 #include <vector>
 
-#include "core/cloud.h"
-
 namespace nicp {
 namespace core {
 

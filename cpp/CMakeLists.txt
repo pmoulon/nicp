@@ -100,3 +100,4 @@ endif(BUILD_NICP_VIEWER)
 
 # Include the subdirectories.
 add_subdirectory(core)
+add_subdirectory(registration3d)
