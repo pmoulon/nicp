@@ -9,7 +9,7 @@
 #include "core/data_associator.h"
 #include "core/linearizer.h"
 
-namespace nicp {
+namespace ochre {
 namespace core {
 
 template <class ReferenceMeasurements, class Measurements, int Z, int S>
@@ -34,4 +34,4 @@ class Solver {
 };
 
 }  // namespace core
-}  // namespace nicp
+}  // namespace ochre

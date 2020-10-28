@@ -7,7 +7,7 @@
 
 #include "core/common_types.h"
 
-namespace nicp {
+namespace ochre {
 namespace core {
 
 Isometry3d VectorToTransform(const Vector6d& v) {
@@ -40,4 +40,4 @@ Vector6d TransformToVector(const Isometry3d& T) {
 }
 
 }  // namespace core
-}  // namespace nicp
+}  // namespace ochre

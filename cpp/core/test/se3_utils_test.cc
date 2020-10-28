@@ -7,7 +7,7 @@
 
 #include "core/test/eigen_matrix_test_helper.h"
 
-namespace nicp {
+namespace ochre {
 namespace core {
 namespace test {
 
@@ -54,4 +54,4 @@ TEST_CASE("TransformToVector") {
 
 }  // namespace test
 }  // namespace core
-}  // namespace nicp
+}  // namespace ochre

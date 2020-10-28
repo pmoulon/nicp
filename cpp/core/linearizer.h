@@ -4,7 +4,7 @@
 
 #include "core/types.h"
 
-namespace nicp {
+namespace ochre {
 namespace core {
 
 template <int Z, int S>
@@ -17,4 +17,4 @@ class Linearizer {
 };
 
 }  // namespace core
-}  // namespace nicp
+}  // namespace ochre

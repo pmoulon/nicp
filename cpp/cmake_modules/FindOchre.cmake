@@ -1,9 +1,9 @@
 # Find the header files
 
-MESSAGE(STATUS "NICP_ROOT: " $ENV{NICP_ROOT})
+MESSAGE(STATUS "OCHRE_ROOT: " $ENV{OCHRE_ROOT})
 
-FIND_PATH(NICP_INCLUDE_DIR nicp/aligner.h
-  $ENV{NICP_ROOT}/nicp
+FIND_PATH(OCHRE_INCLUDE_DIR ochre/aligner.h
+  $ENV{OCHRE_ROOT}/ochre
   /usr/local/include
   /usr/include
   /opt/local/include
@@ -15,12 +15,12 @@ FIND_PATH(NICP_INCLUDE_DIR nicp/aligner.h
 # Macro to unify finding both the debug and release versions of the
 # libraries; this is adapted from the OpenSceneGraph FIND_LIBRARY
 # macro.
-MACRO(FIND_NICP_LIBRARY MYLIBRARY MYLIBRARYNAME)
+MACRO(FIND_OCHRE_LIBRARY MYLIBRARY MYLIBRARYNAME)
   FIND_LIBRARY("${MYLIBRARY}_DEBUG"
     NAMES "${MYLIBRARYNAME}_d"
     PATHS
-    $ENV{NICP_ROOT}/lib/Debug
-    $ENV{NICP_ROOT}/lib
+    $ENV{OCHRE_ROOT}/lib/Debug
+    $ENV{OCHRE_ROOT}/lib
     NO_DEFAULT_PATH
   )
 
@@ -37,12 +37,12 @@ MACRO(FIND_NICP_LIBRARY MYLIBRARY MYLIBRARYNAME)
     /sw/local/lib
     /sw/lib
   )
-  
+
   FIND_LIBRARY(${MYLIBRARY}
     NAMES "${MYLIBRARYNAME}"
     PATHS
-    $ENV{NICP_ROOT}/lib/Release
-    $ENV{NICP_ROOT}/lib
+    $ENV{OCHRE_ROOT}/lib/Release
+    $ENV{OCHRE_ROOT}/lib
     NO_DEFAULT_PATH
   )
 
@@ -59,14 +59,14 @@ MACRO(FIND_NICP_LIBRARY MYLIBRARY MYLIBRARYNAME)
     /sw/local/lib
     /sw/lib
   )
-  
+
   IF(NOT ${MYLIBRARY}_DEBUG)
     IF(MYLIBRARY)
       SET(${MYLIBRARY}_DEBUG ${MYLIBRARY})
     ENDIF(MYLIBRARY)
   ENDIF(NOT ${MYLIBRARY}_DEBUG)
-ENDMACRO(FIND_NICP_LIBRARY LIBRARY LIBRARYNAME)
+ENDMACRO(FIND_OCHRE_LIBRARY LIBRARY LIBRARYNAME)
 
 # Find the core elements
-FIND_NICP_LIBRARY(NICP_LIBRARY nicp)
-FIND_NICP_LIBRARY(NICP_VIEWER_LIBRARY nicp_viewer)
+FIND_OCHRE_LIBRARY(OCHRE_LIBRARY ochre)
+FIND_OCHRE_LIBRARY(OCHRE_VIEWER_LIBRARY ochre_viewer)

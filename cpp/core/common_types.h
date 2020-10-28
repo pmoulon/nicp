@@ -3,7 +3,7 @@
 #include <Eigen/Core>
 #include <Eigen/Geometry>
 
-namespace nicp {
+namespace ochre {
 namespace core {
 
 // Common vector types.
@@ -23,4 +23,4 @@ using Quaterniond = Eigen::Quaterniond;
 using Isometry3d = Eigen::Isometry3d;
 
 }  // namespace core
-}  // namespace nicp
+}  // namespace ochre

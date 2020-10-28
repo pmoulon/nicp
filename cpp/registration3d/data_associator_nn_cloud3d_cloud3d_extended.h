@@ -6,7 +6,7 @@
 #include "core/types.h"
 #include "registration3d/cloud3d.h"
 
-namespace nicp {
+namespace ochre {
 namespace registration3d {
 
 class DataAssociatorNNCloud3dCloud3dExtended : public core::DataAssociator<Cloud3d, Cloud3dExtended> {
@@ -19,4 +19,4 @@ class DataAssociatorNNCloud3dCloud3dExtended : public core::DataAssociator<Cloud
 };
 
 }  // namespace registration3d
-}  // namespace nicp
+}  // namespace ochre

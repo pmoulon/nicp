@@ -8,7 +8,7 @@
 #include "core/linearizer.h"
 #include "core/types.h"
 
-namespace nicp {
+namespace ochre {
 namespace registration3d {
 
 class LinearizerPoint3dSE3 : public core::Linearizer<3, 6> {
@@ -19,4 +19,4 @@ class LinearizerPoint3dSE3 : public core::Linearizer<3, 6> {
 };
 
 }  // namespace registration3d
-}  // namespace nicp
+}  // namespace ochre

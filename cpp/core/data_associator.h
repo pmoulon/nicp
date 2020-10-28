@@ -2,7 +2,7 @@
 
 #include "core/types.h"
 
-namespace nicp {
+namespace ochre {
 namespace core {
 
 template <class ReferenceMeasurements, class Measurements>
@@ -13,4 +13,4 @@ class DataAssociator {
 };
 
 }  // namespace core
-}  // namespace nicp
+}  // namespace ochre

@@ -4,7 +4,7 @@
 
 #include "catch2/catch.hpp"
 
-namespace nicp {
+namespace ochre {
 namespace core {
 namespace test {
 
@@ -71,4 +71,4 @@ auto ApproxEigenMatrix(const Eigen::MatrixBase<T>& matrix) -> detail::ApproxEige
 
 }  // namespace test
 }  // namespace core
-}  // namespace nicp
+}  // namespace ochre

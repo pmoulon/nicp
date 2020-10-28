@@ -5,7 +5,7 @@
 
 #include "core/common_types.h"
 
-namespace nicp {
+namespace ochre {
 namespace registration3d {
 
 using Point3d = core::Vector3d;
@@ -22,4 +22,4 @@ using Cloud3d = std::vector<Point3d>;
 using Cloud3dExtended = std::vector<Point3dExtended>;
 
 }  // namespace registration3d
-}  // namespace nicp
+}  // namespace ochre
